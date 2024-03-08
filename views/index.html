@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-size: 1rem;
+        }
+
+        body {
+            margin: 0;
+            font-family: Roboto, sans-serif;
+            line-height: 1.5;
+            color: #212529;
+            background-color: #ced4da;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        .card {
+            margin: auto;
+            background-color: #fff;
+            border: 1px solid #00000020;
+            border-radius: 0.8rem;
+            width: 20rem;
+        }
+
+        .card-body {
+            flex: 1 1 auto;
+            min-height: 1px;
+            padding: 1rem 1.25rem;
+        }
+
+        .card-title {
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            font-size: 20px;
+            font-family: Roboto;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        p.card-text {
+            font-size: 14px;
+            font-weight: 400;
+            font-style: normal;
+            opacity: 0.75;
+            line-height: 25px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+        }
+
+        p.card-text.text-title {
+            font-weight: 500;
+        }
+
+        .card.border-0 {
+            box-shadow: 0 1px 3px #0000001f, 0 1px 2px #0000003d !important;
+            background: hsl(220deg 14% 97%) !important;
+            background-color: #fff !important;
+            margin-top: 100px !important;
+            border: 1px solid #eee !important;
+            color: #000 !important;
+        }
+
+        hr {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border: 0;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card border-0">
+            <div class="card-body">
+                <h5 class="card-title">Kondisi saat ini</h5>
+                <hr>
+
+                <p class="card-text text-title">Air ({{ .water }} meter)</p>
+                <p class="card-text">Status : {{ .water_status }}</p>
+
+                <br>
+
+                <p class="card-text text-title">Udara ({{ .wind }} meter/detik)</p>
+                <p class="card-text">Status : {{ .wind_status }}</p>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setInterval(async () => {
+            window.location.reload()
+        }, 15000)
+    </script>
+
+</body>
+
+</html>
